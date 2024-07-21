@@ -8,7 +8,6 @@
   - [App](#app)
   - [Circuit Schematic](#circuit-schematic)
   - [Prototype](#prototype)
-  - [MQTT Communication Diagrams](#mqtt-communication-diagrams)
   - [Installation and Integration Instructions](#installation-and-integration-instructions)
 
 ---
@@ -46,7 +45,7 @@ The code has been developed in the Arduino integrated development environment, [
 
 <p align="center">
 		<img height=100 width=100 align="center" src="./images/arduino_logo.jpg" />
-		<img height=100 width=100 align="center" src="./images/appinventor_logo.jpg" />
+		<img height=100 width=100 align="center" src="./images/appinventor_logo.png" />
 		<img height=100 width=100 align="center" src="./images/mqttx_logo.png" />
 </p>
 
@@ -57,8 +56,14 @@ The code has been developed in the Arduino integrated development environment, [
 ## Libraries
 
 Once the programs are installed, download the following libraries:
-* `PubSubClient` by Nick O'Leary (Library Manager): [descarga](https://github.com/knolleary/pubsubclient/releases/tag/v2.8)
 * `esp32` by Espressif Systems (Boards Manager): [descarga](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html)
+* `Adafruit BusIO` by Adafruit (Library Manager): [descarga](https://github.com/adafruit/Adafruit_BusIO)
+* `Adafruit Unified Sensor` by Adafruit (Library Manager): [descarga](https://github.com/adafruit/Adafruit_Sensor)
+* `DHT sensor library` by Adafruit (Library Manager): [descarga](https://github.com/adafruit/DHT-sensor-library)
+* `RTClib` by Adafruit (Library Manager): [descarga](https://github.com/adafruit/RTClib)
+* `ESP32Servo` by Kevin Harrington,John K. Bennett (Library Manager): [descarga](https://github.com/madhephaestus/ESP32Servo)
+* `PubSubClient` by Nick O'Leary (Library Manager): [descarga](https://github.com/knolleary/pubsubclient/releases/tag/v2.8)
+* `pitches.h` by Nick O'Leary (Library Manager): [descarga](https://github.com/arduino/arduino-examples/blob/main/examples/02.Digital/toneMelody/pitches.h)
 
 <br>
 
@@ -66,21 +71,28 @@ Once the programs are installed, download the following libraries:
 
 ## App
 
-To use the app, download it in your mobile phone [intructions](). To modify the app, download this [code]() in the desktop version of MIT App Inventor.
+To use the app, [download](./app/PillBox.apk) in your mobile phone and click on the downloadedfile. To modify the app, download this [code](./app/PillBox.aia) in the desktop version of MIT App Inventor.
 
 <br>
 
 <p align="center">
-		<img height=500 width=850 align="center" src="./images/app.png" />
+		<img height=500 width=850 align="center" src="./images/app.jpeg" />
 </p>
 
 <br>
 
 <p align="center">
-		<img height=500 width=850 align="center" src="./images/code_app.png" />
+		<img height=500 width=850 align="center" src="./images/app_code.png" />
 </p>
 
 <br>
+
+<p align="center">
+		<img height=500 width=850 align="center" src="./images/app_designer.png" />
+</p>
+
+<br>
+
 
 ---
 
@@ -105,58 +117,14 @@ The above assembly is placed next to/inside the box as follows:
 <br>
 
 <p align="center">
-		<img height=500 width=1000 align="center" src="./images/prototype.jpeg" />
+		<img height=500 width=1000 align="center" src="./images/prototype_image.jpeg" />
 </p>
 
 <br>
 
----
-
-## MQTT Communication Diagrams
-
-A continuación se describen los diagramas de comunicación MQTT de las interacciones indirectas presentes en la estación robotizada:
-
-### Interacción botón emergencia - estación
-  Esta interacción es la relativa a la parada de emergencia de todo el sistema robótico presente en la automatización. La ESP32-S3 publicará en el topic “A1/sensor/boton/emergencia/cinta/cajas” el mensaje “PARAR” en caso de que se pulse el botón. A este topic se encontrarán suscritos todos los dispositivos electrónicos de la célula (robot UR, delta, todas las ESP32-S3), deteniendo inmediatamente su ejecución en caso de recibir el mensaje “PARAR”.
-
-<br>
-
-  <p align="center">
-		<img height=400 width=600 align="center" src="./images/boton-pe.png" />
-  </p>
-  
-<br>
-
-### Interacción sensor ultrasonidos - actuador cobot
-  El sensor ultrasónico conectado a la ESP32-S3 se encarga de detectar la presencia o ausencia de una caja al final de la cinta transportadora de paletizado. En caso de encontrar una caja, publicará un JSON con el campo "presencia" conteniendo el mensaje “detect” en el topic “A1/sensor/presencia/cinta/cajas/final”, en caso contrario, publicará "libre" en su lugar. El cobot analizará el mensaje: en el caso de ser "detect", procederá a coger la caja y paletizarla y, en el caso de ser "libre", el cobot esperará en la posición home hasta ser demandado.
-
-<br>
-
-  <p align="center">
-		<img height=400 width=600 align="center" src="./images/ultrasonidos-cobot.png" />
-  </p>
-
-<br>
-
-### Interacción actuador cobot - actuador LED
-Cuando el cobot inicia su operación de paletizado de una caja tras ser detectada por el sensor de ultrasonidos, publica “operando” en el topic “A1/actuador/led/cinta/cajas/final” y el LED azul se enciende. Mientras el cobot no se encuentre en movimiento se publicará en el topic “inactivo” y el LED permanecerá apagado. 
-
-<br>
-
-  <p align="center">
-		<img height=400 width=600 align="center" src="./images/cobot-led.png" />
-  </p>
-
-<br>
-
----
-
-## Funcionalidades Locales del Dispositivo
-
-<br>
-
- El módulo incluye un semáforo, con 2 LEDs, uno verde y uno rojo, y el control de un servomotor para simular el motor de la cinta. Estas funcionalidades no se contemplan en las interacciones MQTT, ya que se comunican internamente mediante buffers y variables protegidas. El semáforo LED indica cuando el sensor ultrasonidos detecta caja y para el motor de la cinta, haciendo que el LED rojo se encienda y, por el contrario, si no hay presencia de caja y la cinta está activa, que se encienda el LED verde. 
-<br> Suponemos que este motor es el que controla la cinta transportadora de cajas y está conectado a la ESP32-S3 que tiene el sensor ultrasónico.
+<p align="center">
+		<img height=500 width=1000 align="center" src="./images/prototype_video.mp4" />
+</p>
 
 <br>
 
