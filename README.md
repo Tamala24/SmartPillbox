@@ -75,7 +75,7 @@ To use the app, [download](./app/PillBox.apk) in your mobile phone and click on 
 <br>
 
 <p align="center">
-		<img height=550 width=200 align="center" src="./images/app.jpeg" />
+		<img height=550 width=300 align="center" src="./images/app.jpeg" />
 </p>
 
 <br>
@@ -131,7 +131,7 @@ The above assembly is placed next to/inside the box as follows:
 <br>
 
 <p align="center">
-		<img height=500 width=850 align="center" src="./images/prototype_image.jpeg" />
+		<img height=550 width=300 align="center" src="./images/prototype_image.jpeg" />
 </p>
 
 <br>
