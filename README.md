@@ -55,14 +55,14 @@ The code has been developed in the Arduino integrated development environment, [
 ## Libraries
 
 Once the programs are installed, download the following libraries:
-* `esp32` by Espressif Systems (Boards Manager): [descarga](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html)
-* `Adafruit BusIO` by Adafruit (Library Manager): [descarga](https://github.com/adafruit/Adafruit_BusIO)
-* `Adafruit Unified Sensor` by Adafruit (Library Manager): [descarga](https://github.com/adafruit/Adafruit_Sensor)
-* `DHT sensor library` by Adafruit (Library Manager): [descarga](https://github.com/adafruit/DHT-sensor-library)
-* `RTClib` by Adafruit (Library Manager): [descarga](https://github.com/adafruit/RTClib)
-* `ESP32Servo` by Kevin Harrington,John K. Bennett (Library Manager): [descarga](https://github.com/madhephaestus/ESP32Servo)
-* `PubSubClient` by Nick O'Leary (Library Manager): [descarga](https://github.com/knolleary/pubsubclient/releases/tag/v2.8)
-* `pitches.h` by Nick O'Leary (Library Manager): [descarga](https://github.com/arduino/arduino-examples/blob/main/examples/02.Digital/toneMelody/pitches.h)
+* `esp32` by Espressif Systems (Boards Manager): [download](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html)
+* `Adafruit BusIO` by Adafruit (Library Manager): [download](https://github.com/adafruit/Adafruit_BusIO)
+* `Adafruit Unified Sensor` by Adafruit (Library Manager): [download](https://github.com/adafruit/Adafruit_Sensor)
+* `DHT sensor library` by Adafruit (Library Manager): [download](https://github.com/adafruit/DHT-sensor-library)
+* `RTClib` by Adafruit (Library Manager): [download](https://github.com/adafruit/RTClib)
+* `ESP32Servo` by Kevin Harrington,John K. Bennett (Library Manager): [download](https://github.com/madhephaestus/ESP32Servo)
+* `PubSubClient` by Nick O'Leary (Library Manager): [download](https://github.com/knolleary/pubsubclient/releases/tag/v2.8)
+* `pitches.h` by Nick O'Leary (Library Manager): [download](https://github.com/arduino/arduino-examples/blob/main/examples/02.Digital/toneMelody/pitches.h)
 
 <br>
 
@@ -75,7 +75,7 @@ To use the app, [download](./app/PillBox.apk) in your mobile phone and click on 
 <br>
 
 <p align="center">
-		<img height=500 width=850 align="center" src="./images/app.jpeg" />
+		<img height=550 width=200 align="center" src="./images/app.jpeg" />
 </p>
 
 <br>
@@ -131,13 +131,13 @@ The above assembly is placed next to/inside the box as follows:
 <br>
 
 <p align="center">
-		<img height=500 width=1000 align="center" src="./images/prototype_image.jpeg" />
+		<img height=500 width=850 align="center" src="./images/prototype_image.jpeg" />
 </p>
 
 <br>
 
-<p align="center">
-		<img height=500 width=1000 align="center" src="./images/prototype_video.mp4" />
+<p align="center">                 
+     <a href="https://drive.google.com/file/d/1dfI8LhsQOu0Xw-bCbGQ_XU2m1PqXq06b/view?usp=sharing">Prototype Video</a>
 </p>
 
 <br>
