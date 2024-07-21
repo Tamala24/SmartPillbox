@@ -19,24 +19,24 @@
 #define LOG_LEVEL TRACE           
 
 // Device configuration
-#define DEVICE_GIIROB_PR2_ID      "17" //"giirobpr2_00"
+#define DEVICE_GIIROB_PR2_ID        "17" //"giirobpr2_00"
 
 // WiFi configuration
-#define NET_SSID                  "UTCN-Guest"
-#define NET_PASSWD                "utcluj.ro"
+#define NET_SSID                    "MyWifi"
+#define NET_PASSWD                  "MyPassword"
 
 // MQTT configuration
-#define MQTT_SERVER_IP            "broker.emqx.io"
-#define MQTT_SERVER_PORT          1883
-#define MQTT_USERNAME             "emqx"    // Uncomment this line (and the next) to connect to the MQTT broker using username and password
-#define MQTT_PASSWORD             "public"
+#define MQTT_SERVER_IP              "broker.emqx.io"
+#define MQTT_SERVER_PORT            1883
+#define MQTT_USERNAME               "emqx"    // Uncomment this line (and the next) to connect to the MQTT broker using username and password
+#define MQTT_PASSWORD               "public"
 
 // MQTT topics
-#define TOPIC_TEMP_HUM      "team7/app/th"
-#define TOPIC_NEW_PILL      "team7/app/pill"
-#define TOPIC_RM            "team7/app/rmpill"
-#define TOPIC_UPDATE        "team7/app/uppill"
-#define TOPIC_CURRENT_ALARM "team7/app/currentAlarm"
+#define TOPIC_TEMP_HUM              "team7/app/th"
+#define TOPIC_NEW_PILL              "team7/app/pill"
+#define TOPIC_RM                    "team7/app/rmpill"
+#define TOPIC_UPDATE                "team7/app/uppill"
+#define TOPIC_CURRENT_ALARM         "team7/app/currentAlarm"
 
 // Pin configuration
 // RGB LED pins
