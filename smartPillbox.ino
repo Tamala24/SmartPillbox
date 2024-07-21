@@ -60,9 +60,6 @@ const int MAX_PILLS = 10;
 Pill pills[MAX_PILLS];
 int numPills = 0;
 
-// Device ID for MQTT
-String deviceID = String("giirobpr2-device-") + String(DEVICE_GIIROB_PR2_ID); 
-
 // Real-Time Clock instance
 RTC_DS3231 rtc;
 

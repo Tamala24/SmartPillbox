@@ -18,9 +18,6 @@
 // Log level for c_logger: TRACE, DEBUG, INFO, WARN, ERROR, FATAL, NONE
 #define LOG_LEVEL TRACE           
 
-// Device configuration
-#define DEVICE_GIIROB_PR2_ID        "17" //"giirobpr2_00"
-
 // WiFi configuration
 #define NET_SSID                    "MyWifi"
 #define NET_PASSWD                  "MyPassword"
